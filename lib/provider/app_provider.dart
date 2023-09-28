@@ -1,7 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:ssg_demo1/user/firebase_firestore/firebase_firestore.dart';
 import 'package:ssg_demo1/user/models/user_model/user_model.dart';
-
+import 'dart:io';
+import '../user/firebase_firestore/firebase_storage.dart';
 import '../user/models/product_model/product_model.dart';
 
 class AppProvider with ChangeNotifier{
@@ -41,7 +43,24 @@ class AppProvider with ChangeNotifier{
   _userModel = await FirebaseFirestoreHelper.instance.getUserInformation();
   notifyListeners();
   }
-  ////user information
+  //update user
+  void updateUserInfoFirebase(BuildContext context,UserModel userModel,File file) async{
+
+    if(file==null){
+      await FirebaseFirestore.instance.collection("users").doc(userModel.id).set(userModel.toJson());
+    }else{
+      String imageUrl=
+      await FirebaseStorageHelper.instance.uploadUserImage(file);
+      _userModel =userModel.copyWith(image: imageUrl);
+      print(imageUrl);
+      await FirebaseFirestore.instance.collection("users").doc(_userModel!.id).set(_userModel!.toJson());
+      notifyListeners();
+    }
+    Navigator.of(context).pop();
+
+  }
+
+
 
 
 

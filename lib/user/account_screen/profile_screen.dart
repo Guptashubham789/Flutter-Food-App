@@ -34,9 +34,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
               child: Container(
                 child: Column(
                   children:  [
+                    SizedBox(height: 10,),
                     appProvider.getUserInformation.image==null?
                     Icon(Icons.person_2_outlined,size: 115,)
-                        :Image.network(appProvider.getUserInformation.image!),
+                        :Image.network(appProvider.getUserInformation.image!,height: 100,width: 200,fit: BoxFit.cover,),
                     Text(appProvider.getUserInformation.name,
                     style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),),
                     Text(appProvider.getUserInformation.email),
@@ -46,7 +47,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       child: CupertinoButton(
                           color: Colors.red,
                           onPressed: () {
-
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => EditProfile(),
+                              ),
+                            );
                           },
                           child: Text("Edit"),
 

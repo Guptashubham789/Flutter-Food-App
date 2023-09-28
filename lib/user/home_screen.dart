@@ -137,13 +137,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           )
                         ],
                       ),
-
-
                     ),
                   ),
                 )).toList(),
               ),
-
             ),
             const Padding(
               padding: const EdgeInsets.all(12.0),

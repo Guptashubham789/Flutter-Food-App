@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
-        android:label="ssg_demo1"
+        android:label="Gupta2007"
 
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
