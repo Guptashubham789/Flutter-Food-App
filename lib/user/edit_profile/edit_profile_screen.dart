@@ -49,7 +49,7 @@ class _EditProfileState extends State<EditProfile> {
             child: CircleAvatar(
               backgroundColor: Colors.red,
               radius: 70,
-              child:image==null? Icon(Icons.camera_alt):Image.file(image!,width: 400,height: 700,fit: BoxFit.cover,),
+              child:image==null? Icon(Icons.camera_alt):Image.file(image!,width: 400,height: 400,fit: BoxFit.cover,),
             ),
           ),
           SizedBox(height: 20,),

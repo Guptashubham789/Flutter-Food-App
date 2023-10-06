@@ -26,7 +26,7 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
     const HomeScreen(),
     const CategoryScreen(),
     const CartScreen(),
-    const FavoriteScreen(),
+    const HomeScreen(),
     const ProfileScreen(),
 
 
@@ -53,9 +53,9 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
 
     ),
     PersistentBottomNavBarItem(
-      icon: const Icon(Icons.favorite),
-      inactiveIcon: const Icon(Icons.favorite_outline_outlined),
-      title: "Favorite",
+      icon: const Icon(Icons.shopping_bag),
+      inactiveIcon: const Icon(Icons.shopping_bag_outlined),
+      title: "Orders",
       activeColorPrimary: Colors.white,
       inactiveColorPrimary: Colors.white54,
 

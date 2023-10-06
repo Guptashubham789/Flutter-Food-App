@@ -13,9 +13,9 @@ class RoundButton extends StatelessWidget {
       child: MaterialButton(
         height: 50,
         minWidth: double.infinity,
-        color: Colors.red[100],
+        color: Colors.red,
         onPressed: onPress,
-        child: Text(title,style: TextStyle(color: Colors.black87),),
+        child: Text(title,style: TextStyle(color: Colors.white,fontFamily: 'serif'),),
       ),
     );
   }

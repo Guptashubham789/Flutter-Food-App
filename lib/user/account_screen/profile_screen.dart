@@ -2,10 +2,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:ssg_demo1/user/change_password/change_password.dart';
 import 'package:ssg_demo1/user/edit_profile/edit_profile_screen.dart';
 
 import '../../provider/app_provider.dart';
 import '../../utils/utils.dart';
+import '../favorite_screen/favorite_screen.dart';
 import '../welcome.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -24,18 +26,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
     return Scaffold(
       appBar: AppBar(
+
         backgroundColor: Colors.red,
         title: Center(child: Text("Account"),),
 
       ),
       body: Column(
         children: [
+          SizedBox(height: 20,),
           Expanded(
               child: Container(
                 child: Column(
                   children:  [
                     SizedBox(height: 10,),
                     appProvider.getUserInformation.image==null?
+
                     Icon(Icons.person_2_outlined,size: 115,)
                         :Image.network(appProvider.getUserInformation.image!,height: 100,width: 200,fit: BoxFit.cover,),
                     Text(appProvider.getUserInformation.name,
@@ -74,9 +79,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     title: Text("Your Order"),
                   ),
                   ListTile(
-                    onTap: (){},
+                    onTap: (){
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(
+                              builder: (context)=>FavoriteScreen())
+                      );
+                    },
                     leading: Icon(Icons.favorite_outline),
                     title: Text("Favourite"),
+                  ),
+                  ListTile(
+                    onTap: (){
+                      Navigator.pushReplacement(context,
+                      MaterialPageRoute(
+                      builder: (context)=>ChangePassword())
+                      );
+                    },
+                    leading: Icon(Icons.published_with_changes_outlined),
+                    title: Text("Change Password"),
                   ),
                   ListTile(
                     onTap: (){},
