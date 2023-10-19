@@ -35,10 +35,8 @@ class _EditProfileState extends State<EditProfile> {
     AppProvider appProvider=Provider.of<AppProvider>(context,);
     return Scaffold(
       appBar: AppBar(
-
         backgroundColor: Colors.red,
         title: Text("Edit Profile",style: TextStyle(color: Colors.white,fontFamily: 'serif'),),
-
       ),
       body: ListView(
         children: [

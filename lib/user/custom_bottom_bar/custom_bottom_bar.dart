@@ -6,6 +6,7 @@ import 'package:ssg_demo1/user/cart_screen/cart_screen.dart';
 import 'package:ssg_demo1/user/favorite_screen/favorite_screen.dart';
 import 'package:ssg_demo1/user/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:ssg_demo1/user/order_screen/order_screen.dart';
 
 class CustomBottomBar extends StatefulWidget {
   const CustomBottomBar({final Key? key,})
@@ -26,7 +27,7 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
     const HomeScreen(),
     const CategoryScreen(),
     const CartScreen(),
-    const HomeScreen(),
+    const OrderScreen(),
     const ProfileScreen(),
 
 
