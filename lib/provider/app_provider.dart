@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:ssg_demo1/user/firebase_firestore/firebase_firestore.dart';
@@ -36,6 +38,7 @@ class AppProvider with ChangeNotifier{
     _favrtProductList.remove(productModel);
     notifyListeners();
   }
+
   List<ProductModel> get getFavrtProductList => _favrtProductList;
 
 //user get tha information
@@ -59,6 +62,16 @@ class AppProvider with ChangeNotifier{
     Navigator.of(context).pop();
 
   }
+  //total price
+
+double totalPrice(){
+   double totalPrice=0.0;
+   for(var element in _cartProductList){
+     totalPrice+=element.price*element.qty!;
+   }
+   return totalPrice;
+
+}
 
 
 

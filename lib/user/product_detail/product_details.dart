@@ -8,6 +8,8 @@ import 'package:ssg_demo1/user/favorite_screen/favorite_screen.dart';
 import 'package:ssg_demo1/user/models/product_model/product_model.dart';
 import 'package:ssg_demo1/utils/utils.dart';
 
+import '../buy_product_screen/buy_product.dart';
+
 class ProductDetails extends StatefulWidget {
   final ProductModel singleProduct;
   const ProductDetails({super.key,required this.singleProduct});
@@ -125,10 +127,10 @@ class _ProductDetailsState extends State<ProductDetails> {
                   child: ElevatedButton(
 
                       onPressed: (){
-                        // Navigator.push(context,
-                        //     MaterialPageRoute(
-                        //         builder: (context)=>FavoriteScreen())
-                        // );
+                        Navigator.push(context,
+                            MaterialPageRoute(
+                                builder: (context)=>BuyProduct())
+                        );
                       },
                       child: Text("BUY")
                   ),
